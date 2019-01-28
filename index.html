@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sketch Pad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/w3.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <!-- Favicon made by https://www.flaticon.com/authors/smashicons from https://www.flaticon.com/ 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+    <link rel="icon" href="resources/icon.png" type="image/png" sizes="64x64" />
+</head>
+<body>
+    <div id="document">
+        <div id="option-bar" class="w3-yellow w3-row w3-margin-bottom">
+            <div class="w3-margin">
+                Current tool: <span id="current-tool" class="w3-text-green"></span>
+            </div>
+            <div class="w3-bar w3-amber">
+                <button id="brush" class="w3-bar-item w3-button w3-deep-orange w3-col m3 s3">Brush</button>
+                <div class="w3-dropdown-click w3-col m3 s3">
+                    <button id="shape-menu-button" class="w3-button w3-bar-item w3-deep-orange">Shapes</button>
+                    <div class="shapes-dropdown w3-dropdown-content w3-bar-block w3-card-4">
+                        <!-- Shapes get populated here -->
+                    </div>
+                </div>
+                <button id="clear-canvas" class="w3-bar-item w3-button w3-right w3-red w3-col m3 s3">Clear Canvas</button>
+                <a id="save-canvas" class="w3-bar-item w3-button w3-right w3-green w3-col m3 s3">Save Canvas as image</a>
+            </div>
+        </div>
+
+        <div id="canvas-area" class="w3-container">
+            <canvas id="canvas">
+                Please update your browser.
+            </canvas>
+        </div>
+
+        <div id="option-modal" class="w3-modal w3-animate-zoom">
+        <span id="modal-close-button" class="w3-button w3-display-topright w3-red">&times;</span>
+            <div class="w3-modal-content">
+                <span id="modal-instructions" class="w3-center w3-margin w3-text-blue">
+                    <p>
+                        Please provide the following values and then press
+                        the button in the top-right corner to save and exit the menu
+                    </p>
+                </span>
+              <div class="w3-container w3-margin">
+              </div>
+            </div>
+        </div>
+
+        <div id="option-modal-brush" class="w3-modal w3-animate-zoom">
+            <span id="modal-close-button-brush" class="w3-button w3-display-topright w3-red">&times;</span>
+                <div class="w3-modal-content">
+                    <span id="modal-instructions" class="w3-center w3-margin w3-text-blue">
+                        Please provide the following values and then press
+                        the button in the top-right corner to save and exit the menu
+                    </span>
+                  <div class="w3-container w3-margin">
+                      <div id="brush-options">
+                        <p>
+                            <label>Brush Size</label>
+                            <input class="w3-input w3-center w3-margin drawing-options brush-width" min="1" placeholder="Size" type="number" value="1" />
+                        </p>
+
+                            <label>Brush Colour</label>
+                
+                        <p>
+                            <input class="w3-radio w3-margin drawing-options stroke-colour" type="radio" name="stroke-colour" value="black" checked />
+                            <label>Black</label>
+                        </p>
+                        
+                        <p>
+                            <input class="w3-radio w3-margin drawing-options stroke-colour" type="radio" name="stroke-colour" value="red" />
+                            <label class="w3-text-red">Red</label>
+                        </p>
+                        
+                        <p>
+                            <input class="w3-radio w3-margin drawing-options stroke-colour" type="radio" name="stroke-colour" value="orange" />
+                            <label class="w3-text-orange">Orange</label>
+                        <p>
+                            <input class="w3-radio w3-margin drawing-options stroke-colour" type="radio" name="stroke-colour" value="green" />
+                            <label class="w3-text-green">Green</label>
+                        </p>
+                        
+                        <p>
+                            <input class="w3-radio w3-margin drawing-options stroke-colour" type="radio" name="stroke-colour" value="blue" />
+                            <label class="w3-text-blue">Blue</label>
+                        </p>
+
+                        <p>
+                            <input class="w3-radio w3-margin drawing-options stroke-colour" type="radio" name="stroke-colour" value="yellow" />
+                            <label class="w3-text-yellow">Yellow</label>
+                        </p>
+                      </div>
+                  </div>
+                </div>
+            </div>
+
+    </div>
+    <script src="js/sketchPad.js"></script>
+    <script src="js/mouseEvents.js"></script>
+    <script src="js/touchEvents.js"></script>
+    <script src="js/shapes.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var sketch = new SketchPad();
+        sketch.initPage();
+    </script>
+</body>
+</html>
